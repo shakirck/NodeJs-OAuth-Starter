@@ -1,0 +1,71 @@
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh; }
+  .auth-container .form-container {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    align-items: center;
+    justify-content: center; }
+    .auth-container .form-container form {
+      display: flex;
+      flex-direction: column;
+      width: 70%;
+      height: 100%; }
+      .auth-container .form-container form input {
+        border: none;
+        border-bottom: 3px solid #2accae;
+        transition: all .3s ease-in-out; }
+      .auth-container .form-container form label {
+        margin-top: 15px; }
+      .auth-container .form-container form input:focus {
+        transform: scale(1.2);
+        background-color: rgba(207, 204, 204, 0.438); }
+      .auth-container .form-container form button {
+        border: none;
+        width: 90%;
+        padding: 10px;
+        background-color: #2accae;
+        margin: 0px auto;
+        margin-top: 10px;
+        border-radius: 20px;
+        color: white;
+        font-weight: 600; }
+        .auth-container .form-container form button img {
+          width: 20px; }
+
+.social-login-item a {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none; }
+  .social-login-item a .item {
+    display: flex;
+    width: 60%;
+    margin-top: 10px;
+    color: white;
+    align-items: center; }
+    .social-login-item a .item .left {
+      width: 20%;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .social-login-item a .item .left img {
+        width: 60%; }
+    .social-login-item a .item .right {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding-right: 10px;
+      align-items: center;
+      margin-top: 10px; }
+  .social-login-item a .google {
+    background-color: #4285f4; }
+  .social-login-item a .facebook {
+    background-color: #3b5998; }

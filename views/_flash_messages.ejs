@@ -1,0 +1,21 @@
+<p>
+    
+  
+    <% if(flash.success && flash.success.length > 0) {%>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <%= flash.success %> 
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        <%}  %>  
+        <% if(flash.error && flash.error.length > 0) {%>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <%= flash.error %> 
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            <%}  %>  
+</p>
+ 
