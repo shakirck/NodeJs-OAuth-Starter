@@ -2,33 +2,72 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100vh; }
+  height: 100vh;
+  color: white; }
   .auth-container .form-container {
     padding: 0;
     margin: 0;
     display: flex;
-    flex-direction: column;
-    width: 50%;
+    flex-direction: row;
+    width: 100%;
     height: 100%;
     align-items: center;
     justify-content: center; }
     .auth-container .form-container form {
       display: flex;
       flex-direction: column;
-      width: 70%;
-      height: 100%; }
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      color: white;
+      height: 100%;
+      position: relative; }
+      .auth-container .form-container form .instructions-container {
+        position: absolute;
+        top: 51%;
+        right: 18%;
+        height: 15px;
+        width: 15px; }
+        .auth-container .form-container form .instructions-container .instructions {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+          height: 0;
+          overflow: hidden;
+          line-height: 20px;
+          margin-left: 10px; }
+          .auth-container .form-container form .instructions-container .instructions p {
+            margin: 1px;
+            background-color: #e63946; }
+      .auth-container .form-container form .instructions-container:hover .instructions {
+        height: 100px;
+        width: 400px; }
       .auth-container .form-container form input {
         border: none;
         border-bottom: 3px solid #2accae;
-        transition: all .3s ease-in-out; }
+        transition: all .3s ease-in-out;
+        width: 60%; }
+      .auth-container .form-container form input:invalid {
+        border: none; }
+      .auth-container .form-container form input:required {
+        box-shadow: none; }
       .auth-container .form-container form label {
-        margin-top: 15px; }
-      .auth-container .form-container form input:focus {
-        transform: scale(1.2);
-        background-color: rgba(207, 204, 204, 0.438); }
+        color: #2accae;
+        margin-top: 15px;
+        text-align: left;
+        position: relative; }
+      .auth-container .form-container form input {
+        padding: 5px;
+        background-color: rgba(255, 255, 255, 0.835);
+        border-radius: 5px; }
+      .auth-container .form-container form input[type="checkbox"] {
+        padding: 0;
+        width: 26px;
+        margin-top: 10px; }
       .auth-container .form-container form button {
         border: none;
-        width: 90%;
+        width: 50%;
         padding: 10px;
         background-color: #2accae;
         margin: 0px auto;
@@ -38,6 +77,8 @@
         font-weight: 600; }
         .auth-container .form-container form button img {
           width: 20px; }
+      .auth-container .form-container form a {
+        color: #e63946; }
 
 .social-login-item a {
   display: flex;

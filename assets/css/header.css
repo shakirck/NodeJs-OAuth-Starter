@@ -2,10 +2,24 @@ header {
   padding: 0;
   margin: 0;
   width: 100%;
-  background-color: black;
-  color: white; }
+  height: 45px;
+  background-color: #001233;
+  color: white;
+  opacity: .9;
+  z-index: 10000;
+  position: relative; }
   header ul {
     padding: 0;
     list-style: none;
     display: flex;
     justify-content: space-between; }
+    header ul li {
+      margin: 10px; }
+      header ul li a {
+        text-decoration: none;
+        color: white; }
+      header ul li a:hover {
+        text-decoration: none;
+        color: white; }
+    header ul .nav-right {
+      display: flex; }

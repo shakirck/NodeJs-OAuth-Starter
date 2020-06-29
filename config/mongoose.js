@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-// mongodb+srv://shakirck:<hJhZyViGQw2Te70I>@cluster0-ytjus.mongodb.net/<dbname>?retryWrites=true&w=majority
 mongoose.connect('mongodb://localhost/auth-test',{useNewUrlParser:true});
 
 const db = mongoose.connection;

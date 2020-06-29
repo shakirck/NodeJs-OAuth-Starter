@@ -5,6 +5,8 @@ const User = require('../models/User');
 const oAuthFunctions = require('./oauthFunctions');
 const facebookStrategy = require('passport-facebook').Strategy;
 const keys = require('./keys');
+
+//for using google OAuth
 passport.use(new googleStrategy({
     clientID: keys.google.clientID,
     clientSecret: keys.google.clientSecret,
@@ -12,6 +14,8 @@ passport.use(new googleStrategy({
 },
  oAuthFunctions.registerOfLogin
 ));
+
+//for using Facebook Oauth
 passport.use(new facebookStrategy({
     clientID: keys.facebook.clientID,
     clientSecret: keys.facebook.clientSecret,

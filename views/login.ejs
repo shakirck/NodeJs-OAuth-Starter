@@ -1,24 +1,33 @@
-
 <div class="auth-container">
     <div class="form-container">
-        <h1>SIGN IN</h1>
-        <%- include ('_flash_messages') %> 
+
         <form action="/users/login" method="POST">
-       <label for="email">Email</label> 
-        <input type="text" name="email" id="email" placeholder="Email Address">
-       
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" placeholder="Enter Your Password">
-        <button type="submit">
-            <img src="https://image.flaticon.com/icons/svg/3014/3014208.svg" alt="">
-            Sign In
-        </button>
-        
-        <p>Don't have an account ? <a href="/users/register">SignUp</a></p>
-        <%- include ('_social_login') %> 
+            <h1>SIGN IN</h1>
+            <%- include ('_flash_messages') %>
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" placeholder="Email Address">
+
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" placeholder="Enter Your Password">
+            <button type="submit">
+                <img src="https://image.flaticon.com/icons/svg/3014/3014208.svg" alt="">
+                Sign In
+            </button>
+            <div class="links-bottom" style="display: flex; flex-direction: column;justify-content: space-around; margin-top: 10px;">
+                <p><a href="/users/forgot-password">Forgot Password</a></p>
+
+                <p>Don't have an account ? <a href="/users/register">SignUp</a></p>
+            </div>
 
         </form>
+        <div>
+            OR
+        </div>
+        <div>
+            <%- include ('_social_login') %>
+
+        </div>
     </div>
-  
+
 
 </div>

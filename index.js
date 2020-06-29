@@ -11,6 +11,7 @@ const customMiddleWare = require('./config/middleware');
 const PORT = 8000;
 const oAuthPassportStrategies = require('./config/passport-oAuth2-strategy');
 const sassMiddleWare = require('node-sass-middleware');
+//for sass middleware
 app.use(sassMiddleWare({
     src:'./assets/scss',
     dest:'./assets/css',
@@ -27,8 +28,8 @@ app.set("layout extractScripts", true)
 
 
 
-//session
 
+//For saving session 
 app.use(session({
     name:'authTest',
     secret:'mykey',
@@ -40,6 +41,7 @@ app.use(session({
  
 
 }));
+//passport authentication middlewares
 app.use(passport.initialize())
 app.use(passport.session());
 app.use(passport.setAuthenticatedUser);
@@ -56,5 +58,5 @@ app.use('/users',require('./routes/users'));
 
 
 
-
+//running server
 app.listen(PORT,console.log('Server Started on ', PORT));

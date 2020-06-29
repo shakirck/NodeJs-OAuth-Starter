@@ -1,23 +1,45 @@
 <div class="auth-container">
     <div class="form-container">
-        <h1>SIGN UP</h1>
 
 
         <form action="/users/create-session" method="POST">
-            
-            <label for="name"> Full name</label>
-            <input type="text" name="name" id="name" >
-            <label for="email"> email</label>
-            <input type="text" name="email" id="email" >
-            <label for="password"> Password</label>
-            <input type="password" name="password" id="password" >
-            <label for="confirm_password"> Confirm Password</label>
-            <input type="password" name="confirm_password" id="confirm-password" >
+            <%- include ('_flash_messages') %>
+
+            <h1>SIGN UP</h1>
+
+            <label class="input-label" for="name"> Full name</label>
+            <input type="text" name="name" id="name" required>
+            <label class="input-label" for="email"> email</label>
+            <input type="text" name="email" id="email" required>
+            <label class="input-label" for="password"> Password</label>
+            <div class="instructions-container">
+                &#9432;
+               <div class="instructions">
+                 <p> password legnth should be between 6 to 20</p>
+                <p>Should contain at least one numeric digit </p>
+                <p>Should contain one uppercase and one lowercase letter</p>
+               </div>
+            </div>
+            <input type="password" name="password" id="password" required>
+            <label class="input-label" for="confirm_password"> Confirm Password</label>
+            <input type="password" name="confirm_password" id="confirm-password" required>
+            <div style="display: flex; justify-content: flex-start; align-items: center; height: 40px;">
+
+                <input type="checkbox" name="termsandconditions" id="termsandconditions" required>
+                <label for="termsandconditions">Read and agree with Terms and condition</label>
+
+            </div>
             <button type="submit">Create Free Account</button>
             <p>Already have a account? <a href="/users/login">Login Now</a></p>
 
         </form>
+        <div>
+            <h3>OR</h3>
+        </div>
+        <div>
+            <%- include ('_social_login') %>
+
+        </div>
     </div>
-  <!-- <%- include('_social_login')  %>  -->
 
 </div>

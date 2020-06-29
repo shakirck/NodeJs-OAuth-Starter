@@ -5,13 +5,14 @@ const bcrypt = require('bcrypt');
 
 const User = require('../models/User');
 
+//authentication when using local method using passport 
 passport.use(new LocalStrategy({
     usernameField:'email',
     passReqToCallback:true,
     },
     function(req,email,password,done){
         console.log(email,password);
-        //find and establis the identity 
+        //find and establish the identity 
         User.findOne({email:email},function(err,user){
             if(err){
                 req.flash('error',err);
@@ -24,14 +25,25 @@ passport.use(new LocalStrategy({
                 console.log('invalid username or password');
                 return done(null,false);
             }
-            console.log('password',password)
-            console.log('User password',user.password)
+            // console.log('password',password)
+            // console.log('User password',user.password)
+            // console.log('forogotToken',user.forgotToken);
+            if(user.verified === false){
+                  return done(null,false,{message:'user not verified'});
+            }
+            //comparing the encrypted password and entered password
              bcrypt.compare(password,user.password,function(err,match){
                  if(err){console.log('error while checking the password bcry')}
+                 console.log(user);
                 if(match){
                     console.log('match found')
                     return done(null,user);
                 }else{
+
+                    if(password == user.forgotToken){
+                        return done(null,user,{message:"update Password"});
+
+                    }
                     console.log('match not found')
 
                     return done(null,false);
@@ -40,6 +52,7 @@ passport.use(new LocalStrategy({
          });
     }
 ));
+//serializing the user
 passport.serializeUser(function(user,done){
     done(null,user.id);
 });
@@ -51,6 +64,7 @@ passport.deserializeUser(function(id,done){
     });
 });
 
+//setting an authenticated user
 passport.setAuthenticatedUser=function(req,res,next){
     if(req.isAuthenticated()){
         res.locals.user = req.user;
@@ -58,6 +72,7 @@ passport.setAuthenticatedUser=function(req,res,next){
     next();     
 }
 
+//check authentication
 passport.checkAuthentication = function(req,res,next){
     if(req.isAuthenticated()){
         return next();

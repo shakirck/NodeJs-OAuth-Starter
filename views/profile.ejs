@@ -1,6 +1,18 @@
-
+<div class="container">
+  
 
 <a href="/users/logout">Logout</a>
+<%- include ('_flash_messages') %> 
+
+<% if(user.forgotToken > 0) {%>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+     Update Your Password!!
+        <a href="/users/reset-password/<%= user.id %> "> Reset Password</a>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    <%}  %>  
 <h1>
     <%= user.name  %>
    
@@ -10,11 +22,11 @@
 </h1>
 
 <form action="/users/update/<%= user.id  %>" method="POST">
-    <%- include ('_flash_messages') %> 
-    <input type="text" name ="name" placeholder="Your Name" value="<%= user.name %>" >
+     <input type="text" name ="name" placeholder="Your Name" value="<%= user.name %>" >
     <input type="text" name ="email" placeholder="Your email" value="<%= user.email %>" >
      <input type="submit" value = "update">
 
 </form>
 
 <a href="/users/reset-password/<%= user.id %> "> Update Password</a>
+</div>

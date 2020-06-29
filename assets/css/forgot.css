@@ -1,0 +1,19 @@
+.container {
+  color: white;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .container .form-container {
+    display: flex;
+    flex-direction: row; }
+    .container .form-container form label {
+      color: white; }
+    .container .form-container form button {
+      border: none;
+      padding: 10px;
+      color: white;
+      color: white;
+      background-color: #e63946; }

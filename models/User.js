@@ -13,6 +13,16 @@ const UserSchema = new mongoose.Schema({
     password:{
         type:String,
         required:true,
+    },
+    verified:{
+        type:Boolean,
+        default:false
+    },
+    verifyToken:{
+        type:String
+    },
+    forgotToken:{
+        type:Number
     }
 });
 const User = mongoose.model('User',UserSchema);
