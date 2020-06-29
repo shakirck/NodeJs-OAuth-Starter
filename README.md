@@ -29,3 +29,12 @@ const keys = {
 }
 
 ```
+
+### ScreenShots
+
+
+![Screenshot](https://github.com/shakirck/NodeJs-OAuth-Starter/blob/master/assets/images/homepage.png)
+![Screenshot](https://github.com/shakirck/NodeJs-OAuth-Starter/blob/master/assets/images/login.png)
+![Screenshot](https://github.com/shakirck/NodeJs-OAuth-Starter/blob/master/assets/images/profile.png)
+![Screenshot](https://github.com/shakirck/NodeJs-OAuth-Starter/blob/master/assets/images/reset%20password.png)
+![Screenshot](https://github.com/shakirck/NodeJs-OAuth-Starter/blob/master/assets/images/gmail.png)
