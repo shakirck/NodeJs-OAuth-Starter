@@ -6,7 +6,7 @@
 
 ```sh
 $ git clone https://github.com/shakirck/NodeJs-OAuth-Starter.git
-$ cd Habit-Tracker
+$ cd NodeJs-OAuth-Starter
 $ npm install 
 $ npm start
 
