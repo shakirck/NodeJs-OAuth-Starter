@@ -47,7 +47,7 @@ app.use(passport.session());
 app.use(passport.setAuthenticatedUser);
 
 
-//flash
+//flash--for notifications
 app.use(flash());
 app.use(customMiddleWare.setFlash);
 
