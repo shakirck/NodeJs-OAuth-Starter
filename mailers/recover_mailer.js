@@ -13,7 +13,7 @@ exports.recoverUser= (user)=>{
         to: user.email, // list of receivers
         subject: "PASSWORD RESET", // Subject line
         // text: "Hello world?", // plain text body
-        html:htmlString, // html body
+        html:htmlString, // html body   
 
     },function(err,info){
         if(err){console.log('error while sending mail',err);return;}
